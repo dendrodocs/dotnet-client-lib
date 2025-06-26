@@ -10,6 +10,11 @@ on:
   release:
     types: [created]
 
+permissions:
+  contents: read
+  packages: write
+  actions: write
+
 jobs:
   ubuntu-latest:
     name: ubuntu-latest
