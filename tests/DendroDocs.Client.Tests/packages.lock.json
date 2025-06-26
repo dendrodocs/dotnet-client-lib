@@ -244,14 +244,14 @@
       "dendrodocs.client": {
         "type": "Project",
         "dependencies": {
-          "DendroDocs.Shared": "[0.3.1, )"
+          "DendroDocs.Shared": "[0.3.2, )"
         }
       },
       "DendroDocs.Shared": {
         "type": "CentralTransitive",
-        "requested": "[0.3.1, )",
-        "resolved": "0.3.1",
-        "contentHash": "Yv+zHMWCqH1blYY4JOUfbmqShCeCFD1sDUnQ6s/581dnc3AG3vnuhNXmk+vLPv4wEhusFmCRKyimTym6NhQYEw==",
+        "requested": "[0.3.2, )",
+        "resolved": "0.3.2",
+        "contentHash": "8k305PV9XQwZle+1EXH1ckGc/QJRYq/6eQOz2W6EFM0arobYLbcub1aCKiW6nZ7LGXdwEsB/WOEJjZ+sd6j+9w==",
         "dependencies": {
           "Newtonsoft.Json": "13.0.3"
         }
