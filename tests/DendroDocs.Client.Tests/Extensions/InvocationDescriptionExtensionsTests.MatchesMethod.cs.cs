@@ -1,4 +1,4 @@
-namespace DendroDocs.Tests;
+namespace DendroDocs.Extensions.Tests;
 
 public partial class InvocationDescriptionExtensionsTests
 {

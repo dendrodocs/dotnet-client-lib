@@ -1,4 +1,4 @@
-namespace DendroDocs;
+namespace DendroDocs.Extensions;
 
 public static class InvocationDescriptionExtensions
 {
