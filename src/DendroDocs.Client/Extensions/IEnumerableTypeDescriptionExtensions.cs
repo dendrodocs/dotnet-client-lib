@@ -1,4 +1,4 @@
-﻿namespace DendroDocs;
+﻿namespace DendroDocs.Extensions;
 
 public static class IEnumerableTypeDescriptionExtensions
 {
@@ -21,7 +21,7 @@ public static class IEnumerableTypeDescriptionExtensions
         ArgumentNullException.ThrowIfNull(types);
 
         var type = types.FirstOrDefault(invocation.ContainingType);
-        if (type == null)
+        if (type is null)
         {
             return [];
         }
@@ -125,7 +125,7 @@ public static class IEnumerableTypeDescriptionExtensions
     private static void PopulateInheritedBaseTypes(this IEnumerable<TypeDescription> types, string fullName, List<string> baseTypes)
     {
         var type = types.FirstOrDefault(fullName);
-        if (type == null)
+        if (type is null)
         {
             return;
         }
@@ -150,7 +150,7 @@ public static class IEnumerableTypeDescriptionExtensions
             foreach (string baseType in type.BaseTypes)
             {
                 var inheretedType = types.FirstOrDefault(baseType);
-                if (inheretedType == null)
+                if (inheretedType is null)
                 {
                     continue;
                 }
