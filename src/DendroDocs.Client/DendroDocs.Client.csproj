@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    
+    <Authors>Michaël Hompus</Authors>
+    <PackageProjectUrl>https://github.com/DendroDocs/dotnet-client-lib</PackageProjectUrl>
+    <Description></Description>
+    <Copyright>Copyright Michaël Hompus 2019</Copyright>
+    <RepositoryUrl>https://github.com/DendroDocs/dotnet-client-lib</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Living Documentation; DendroDocs; Roslyn; UML; Generation;</PackageTags>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Version>0.1.0</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Using Include="System.Text" />
+    <Using Remove="System.IO" />
+    <Using Remove="System.Net.Http" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DendroDocs.Shared" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="icon.png" Pack="true" PackagePath="\" />
+    <None Update="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
