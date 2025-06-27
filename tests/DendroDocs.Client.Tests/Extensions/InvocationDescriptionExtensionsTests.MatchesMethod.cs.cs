@@ -74,4 +74,18 @@ public partial class InvocationDescriptionExtensionsTests
         // Assert
         result.ShouldBeFalse();
     }
+
+    [TestMethod]
+    public void MatchesMethod_InvocationNameCaseSensitive_Should_NotMatch()
+    {
+        // Assign
+        var method = new MethodDescription("void", "method");
+        var invocation = new InvocationDescription("System.Object", "Method");
+
+        // Act
+        var result = invocation.MatchesMethod(method);
+
+        // Assert
+        result.ShouldBeFalse();
+    }
 }
