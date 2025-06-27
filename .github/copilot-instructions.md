@@ -72,6 +72,21 @@ dotnet build
 dotnet test
 ```
 
+### GitVersion Requirements
+- **Always fetch complete git history** when working with GitVersion for proper versioning
+- Use `fetch-depth: 0` in GitHub Actions checkout to ensure GitVersion has access to all tags and commits
+- For local development, ensure you have the full repository history with `git fetch --unshallow` if needed
+
+```yaml
+# ✅ Required in GitHub Actions workflows
+- uses: actions/checkout@v4
+  with:
+    fetch-depth: 0
+
+# ✅ For local development if repository was shallow cloned
+git fetch --unshallow
+```
+
 ### Testing
 - All changes must maintain or improve test coverage
 - Use MSTest framework (`[TestClass]`, `[TestMethod]`, `[DataRow]`)
