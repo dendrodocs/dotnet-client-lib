@@ -64,4 +64,21 @@ public partial class IEnumerableTypeDescriptionExtensionsTests
         // Assert
         action.ShouldThrow<InvalidOperationException>();
     }
+
+    [TestMethod]
+    public void First_CaseSensitiveSearch_Should_NotMatch()
+    {
+        // Assign
+        var types = new[]
+        {
+            new TypeDescription(TypeType.Class, "testtype"),
+            new TypeDescription(TypeType.Class, "AnotherType")
+        };
+
+        // Act
+        Action action = () => types.First("TestType");
+
+        // Assert
+        action.ShouldThrow<InvalidOperationException>();
+    }
 }

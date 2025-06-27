@@ -63,4 +63,21 @@ public partial class IEnumerableTypeDescriptionExtensionsTests
         // Assert
         result.ShouldBeNull();
     }
+
+    [TestMethod]
+    public void FirstOrDefault_CaseSensitiveSearch_Should_ReturnNull()
+    {
+        // Assign
+        var types = new[]
+        {
+            new TypeDescription(TypeType.Class, "testtype"),
+            new TypeDescription(TypeType.Class, "AnotherType")
+        };
+
+        // Act
+        var result = types.FirstOrDefault("TestType");
+
+        // Assert
+        result.ShouldBeNull();
+    }
 }
