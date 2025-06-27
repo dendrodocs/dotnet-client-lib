@@ -132,7 +132,8 @@ trying something
 ```
 
 ### Pull Request Guidelines
-- Squash commits to maintain clean history if needed
+- **Group changes logically over one or more commits** instead of squashing everything
+- **Force push is allowed on feature branches** for history reorganization
 - Ensure all tests pass before submitting
 - Update documentation for public API changes
 - Follow semantic versioning principles for breaking changes
