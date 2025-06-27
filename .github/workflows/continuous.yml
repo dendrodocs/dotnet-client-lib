@@ -14,6 +14,8 @@ permissions:
   contents: read
   packages: write
   actions: write
+  id-token: write
+  attestations: write
 
 jobs:
   ubuntu-latest:
@@ -35,6 +37,10 @@ jobs:
         env:
           FeedGitHubToken: ${{ secrets.FEED_GITHUB_TOKEN }}
           NuGetApiKey: ${{ secrets.NUGET_API_KEY }}
+      - name: 'Attest: Build Provenance'
+        uses: actions/attest-build-provenance@v1
+        with:
+          subject-path: 'Artifacts/*.nupkg'
       - name: Report Coveralls
         uses: coverallsapp/github-action@v2
       - name: 'Publish: Artifacts'
