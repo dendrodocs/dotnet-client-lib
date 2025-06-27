@@ -5,7 +5,7 @@
     
     <Authors>Michaël Hompus</Authors>
     <PackageProjectUrl>https://github.com/DendroDocs/dotnet-client-lib</PackageProjectUrl>
-    <Description></Description>
+    <Description>A client library for the DendroDocs ecosystem that provides extension methods for working with code analysis data, including TypeDescription, MethodDescription, and InvocationDescription models used in living documentation generation.</Description>
     <Copyright>Copyright Michaël Hompus 2019</Copyright>
     <RepositoryUrl>https://github.com/DendroDocs/dotnet-client-lib</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
