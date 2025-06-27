@@ -119,10 +119,10 @@ public void ExtensionMethod_NullInput_ShouldThrow()
 
 ```bash
 # ✅ Good commit messages
-add support for generic type detection in diagrams
-handle null reference in string extension methods
-add comprehensive tests for inheritance resolution
-update API documentation for type description methods
+Add support for generic type detection in diagrams
+Handle null reference in string extension methods
+Add comprehensive tests for inheritance resolution
+Update API documentation for type description methods
 
 # ❌ Avoid these commit messages
 initial plan
