@@ -114,15 +114,15 @@ public void ExtensionMethod_NullInput_ShouldThrow()
 ### Commit History
 - **Prefer a linear commit history** with only descriptive commits
 - **Avoid "initial plan" or "work in progress" commits** in the final PR
-- Use conventional commit format when possible: `type(scope): description`
+- Each commit message should be a good functional description of the change
 - Each commit should represent a complete, working change
 
 ```bash
 # ✅ Good commit messages
-feat: add support for generic type detection in diagrams
-fix: handle null reference in string extension methods
-test: add comprehensive tests for inheritance resolution
-docs: update API documentation for type description methods
+add support for generic type detection in diagrams
+handle null reference in string extension methods
+add comprehensive tests for inheritance resolution
+update API documentation for type description methods
 
 # ❌ Avoid these commit messages
 initial plan
@@ -146,12 +146,12 @@ trying something
 - Return meaningful defaults for edge cases (e.g., empty collections instead of null)
 
 ### Type Analysis
-- Use `StringComparison.Ordinal` for performance-critical string operations
+- Use `StringComparison.Ordinal` for performance-critical string operations when it's not the default
 - Handle generic types with proper parsing of angle brackets
 - Consider inheritance hierarchies when analyzing type relationships
 
 ### Performance
-- Prefer LINQ methods over manual loops where readability is maintained
+- Prefer manual loops over LINQ methods unless readability significantly outweighs performance concerns
 - Use `StringBuilder` for string concatenation in loops
 - Cache expensive operations when called repeatedly
 
