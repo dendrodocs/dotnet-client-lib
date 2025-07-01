@@ -1,7 +1,16 @@
 namespace DendroDocs.Extensions;
 
+/// <summary>
+/// Provides extension methods for string operations related to type analysis and formatting.
+/// </summary>
 public static class StringExtensions
 {
+    /// <summary>
+    /// Determines whether the specified type name represents an enumerable collection type.
+    /// </summary>
+    /// <param name="type">The full type name to check.</param>
+    /// <returns><c>true</c> if the type is an enumerable collection; otherwise, <c>false</c>.</returns>
+    /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <c>null</c>.</exception>
     public static bool IsEnumerable(this string type)
     {
         ArgumentNullException.ThrowIfNull(type);
@@ -22,6 +31,12 @@ public static class StringExtensions
         return !type.Contains("Enumerator") && !type.Contains("Compar") && !type.Contains("Structural") && !type.Contains("Provider");
     }
 
+    /// <summary>
+    /// Determines whether the specified type name represents a generic type.
+    /// </summary>
+    /// <param name="type">The type name to check for generic type indicators.</param>
+    /// <returns><c>true</c> if the type is generic (contains angle brackets); otherwise, <c>false</c>.</returns>
+    /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <c>null</c>.</exception>
     public static bool IsGeneric(this string type)
     {
         ArgumentNullException.ThrowIfNull(type);
@@ -29,6 +44,18 @@ public static class StringExtensions
         return type.IndexOf('>') > -1 && type.TrimEnd().EndsWith('>');
     }
 
+    /// <summary>
+    /// Extracts the generic type arguments from a generic type name.
+    /// </summary>
+    /// <param name="type">The generic type name to parse.</param>
+    /// <returns>A read-only list containing the generic type arguments. Returns an empty list if the type is not generic.</returns>
+    /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <c>null</c>.</exception>
+    /// <example>
+    /// <code>
+    /// var genericTypes = "System.Collections.Generic.List&lt;System.String&gt;".GenericTypes();
+    /// // Returns: ["System.String"]
+    /// </code>
+    /// </example>
     public static IReadOnlyList<string> GenericTypes(this string type)
     {
         ArgumentNullException.ThrowIfNull(type);
@@ -58,6 +85,18 @@ public static class StringExtensions
         return types;
     }
 
+    /// <summary>
+    /// Formats a type name for display in diagrams by removing namespace qualifiers and preserving generic type structure.
+    /// </summary>
+    /// <param name="type">The full type name to format.</param>
+    /// <returns>A simplified type name suitable for diagram display.</returns>
+    /// <exception cref="ArgumentNullException">Thrown when <paramref name="type"/> is <c>null</c>.</exception>
+    /// <example>
+    /// <code>
+    /// var diagramName = "System.Collections.Generic.List&lt;System.String&gt;".ForDiagram();
+    /// // Returns: "List&lt;String&gt;"
+    /// </code>
+    /// </example>
     public static string ForDiagram(this string type)
     {
         ArgumentNullException.ThrowIfNull(type);
@@ -78,6 +117,17 @@ public static class StringExtensions
         }
     }
 
+    /// <summary>
+    /// Converts a string to sentence case by adding spaces before uppercase letters and digits.
+    /// </summary>
+    /// <param name="type">The string to convert to sentence case.</param>
+    /// <returns>The string converted to sentence case with appropriate spacing.</returns>
+    /// <example>
+    /// <code>
+    /// var sentence = "MyPropertyName".ToSentenceCase();
+    /// // Returns: "My Property Name"
+    /// </code>
+    /// </example>
     public static string ToSentenceCase(this string type)
     {
         if (string.IsNullOrEmpty(type))
