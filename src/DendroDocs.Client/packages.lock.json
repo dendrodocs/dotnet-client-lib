@@ -21,6 +21,12 @@
           "Microsoft.SourceLink.Common": "8.0.0"
         }
       },
+      "PlantUml.Builder": {
+        "type": "Direct",
+        "requested": "[0.1.63, )",
+        "resolved": "0.1.63",
+        "contentHash": "oidQGXTbe3E9SQ3UWLtUglJNgGEg2hWyCc4vDU1xYtESG9hZoO93tRu2QIhH/KCGSBh50hMuOMRXBUHoIyiJbQ=="
+      },
       "Microsoft.Build.Tasks.Git": {
         "type": "Transitive",
         "resolved": "8.0.0",
