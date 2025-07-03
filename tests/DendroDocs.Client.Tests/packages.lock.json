@@ -245,6 +245,7 @@
         "type": "Project",
         "dependencies": {
           "DendroDocs.Shared": "[0.4.2, )",
+          "PlantUml.Builder": "[0.1.63, )"
         }
       },
       "DendroDocs.Shared": {
@@ -261,6 +262,12 @@
         "requested": "[13.0.3, )",
         "resolved": "13.0.3",
         "contentHash": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ=="
+      },
+      "PlantUml.Builder": {
+        "type": "CentralTransitive",
+        "requested": "[0.1.63, )",
+        "resolved": "0.1.63",
+        "contentHash": "oidQGXTbe3E9SQ3UWLtUglJNgGEg2hWyCc4vDU1xYtESG9hZoO93tRu2QIhH/KCGSBh50hMuOMRXBUHoIyiJbQ=="
       }
     },
     "net8.0/linux-x64": {
