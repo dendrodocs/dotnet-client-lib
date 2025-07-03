@@ -4,9 +4,9 @@
     "net8.0": {
       "DendroDocs.Shared": {
         "type": "Direct",
-        "requested": "[0.3.2, )",
-        "resolved": "0.3.2",
-        "contentHash": "8k305PV9XQwZle+1EXH1ckGc/QJRYq/6eQOz2W6EFM0arobYLbcub1aCKiW6nZ7LGXdwEsB/WOEJjZ+sd6j+9w==",
+        "requested": "[0.4.2, )",
+        "resolved": "0.4.2",
+        "contentHash": "YfYo/kboAwdy8Qo0Iu1FF7+pZ+Fd8BHIyM8XbHTczjYjcmVsSJl2VS1oCJTj5eymMHqWMX2eTzQWRMByxnVVaA==",
         "dependencies": {
           "Newtonsoft.Json": "13.0.3"
         }
