@@ -53,11 +53,11 @@
       },
       "MSTest.TestFramework": {
         "type": "Direct",
-        "requested": "[3.7.1, )",
-        "resolved": "3.7.1",
-        "contentHash": "E22Dkq+4AsRgPV36Zmf7FIYiB2jkInxg5xcyP2uJ+SP34QrEkEt7rJkD6En/W8rG3k8yDaLeGR35VVUhtdx0PA==",
+        "requested": "[3.10.1, )",
+        "resolved": "3.10.1",
+        "contentHash": "G+OBqUGOSxo+2rv+mTK+nOK0rESYUjJNhU+GsPnqEqGQdd5u8wGzs2TpoY1CLavaEzUsw0cHALl+j52QpvGMBA==",
         "dependencies": {
-          "MSTest.Analyzers": "3.7.1"
+          "MSTest.Analyzers": "3.10.1"
         }
       },
       "Shouldly": {
@@ -175,8 +175,8 @@
       },
       "MSTest.Analyzers": {
         "type": "Transitive",
-        "resolved": "3.7.1",
-        "contentHash": "HmsRhCu8IV1bRKHMW+BIuye91Pw2dnl6Q7eTmn8eLpY15sSpMAe0F9L5nrsoehCHKvgi4HoOjJo7WDZJZS1ntg=="
+        "resolved": "3.10.1",
+        "contentHash": "OcXiLNIXsJ9J/zlgvjnwnQ9tRH7zGzYVvbtS+w/YPSwlpEr0455p69yjTWQ8jNHqK7wn9JatOhtPPRfhYK0Y6w=="
       },
       "System.Buffers": {
         "type": "Transitive",
