@@ -25,6 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MSTest.TestAdapter" />
+    <PackageReference Include="MSTest.TestFramework" />
     <ProjectReference Include="..\..\src\DendroDocs.Client\DendroDocs.Client.csproj" />
   </ItemGroup>
 
