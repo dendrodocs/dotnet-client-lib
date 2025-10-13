@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Testing.Extensions.CodeCoverage" />
     <ProjectReference Include="..\..\src\DendroDocs.Client\DendroDocs.Client.csproj" />
   </ItemGroup>
 
