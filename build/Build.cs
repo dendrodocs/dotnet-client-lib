@@ -25,8 +25,7 @@ using static Serilog.Log;
         nameof(Push)
     ],
     ImportSecrets = [
-        nameof(FeedGitHubToken),
-        nameof(NuGetApiKey)
+        nameof(FeedGitHubToken)
     ]
 )]
 [UnsetVisualStudioEnvironmentVariables]
