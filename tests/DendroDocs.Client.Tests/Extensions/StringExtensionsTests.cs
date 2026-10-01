@@ -26,7 +26,7 @@ public partial class StringExtensionsTests
 
     }
 
-    [DynamicData(nameof(GetGenericTypes), DynamicDataSourceType.Method, DynamicDataDisplayName = nameof(GetGenericTypesDisplayName))]
+    [DynamicData(nameof(GetGenericTypes), DynamicDataDisplayName = nameof(GetGenericTypesDisplayName))]
     [TestMethod]
     public void GenericTypesShouldBeCorrectlyExtracted(string type, string[] expected)
     {
