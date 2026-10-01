@@ -23,9 +23,6 @@ using static Serilog.Log;
     OnPullRequestBranches = ["main"],
     InvokedTargets = [
         nameof(Push)
-    ],
-    ImportSecrets = [
-        nameof(FeedGitHubToken)
     ]
 )]
 [UnsetVisualStudioEnvironmentVariables]
