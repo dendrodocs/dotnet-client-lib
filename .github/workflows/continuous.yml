@@ -47,7 +47,7 @@ jobs:
       - name: 'Run: Push'
         run: ./build.cmd Push
         env:
-          FeedGitHubToken: ${{ secrets.FEED_GITHUB_TOKEN }}
+          FeedGitHubToken: ${{ github.token }}
           NuGetApiKey: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
       - name: 'Attest: Build Provenance'
         if: github.event_name == 'release' || github.ref == 'refs/heads/main'
