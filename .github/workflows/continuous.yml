@@ -12,39 +12,52 @@ on:
 
 permissions:
   contents: read
-  packages: write
-  actions: write
-  id-token: write
-  attestations: write
+
+concurrency:
+  group: continuous-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   ubuntu-latest:
     name: ubuntu-latest
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+      attestations: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           fetch-depth: 0
       - name: 'Cache: .nuke/temp, ~/.nuget/packages'
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: |
             .nuke/temp
             ~/.nuget/packages
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj', '**/Directory.Packages.props') }}
+      - name: 'NuGet: Login with trusted publishing'
+        if: github.event_name == 'release'
+        id: nuget-login
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1
+        with:
+          user: ${{ secrets.NUGET_USER }}
       - name: 'Run: Push'
         run: ./build.cmd Push
         env:
           FeedGitHubToken: ${{ secrets.FEED_GITHUB_TOKEN }}
-          NuGetApiKey: ${{ secrets.NUGET_API_KEY }}
+          NuGetApiKey: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
       - name: 'Attest: Build Provenance'
-        uses: actions/attest-build-provenance@v1
+        if: github.event_name == 'release' || github.ref == 'refs/heads/main'
+        uses: actions/attest-build-provenance@ef244123eb79f2f7a7e75d99086184180e6d0018 # v1
         with:
           subject-path: 'Artifacts/*.nupkg'
       - name: Report Coveralls
-        uses: coverallsapp/github-action@v2
+        uses: coverallsapp/github-action@8d6379e14d29928660c4ba802d8e85393440b329 # v2
       - name: 'Publish: Artifacts'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: Artifacts
           path: Artifacts
